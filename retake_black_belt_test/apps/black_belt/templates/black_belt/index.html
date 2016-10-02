@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pokes</title>
+	</head>
+	<body>
+		<a href = "{% url 'logreg:logout' %}">Logout</a>
+		<h1>Welcome, {{current_user.first_name}}!</h1>
+		<h2>{{pokemes | length}} People poked you</h2>
+		<table>
+			<tbody>
+				{% for pokeme in pokemes %}
+					<tr>
+						<td>{{pokeme.poker__last_name}} poked you {{pokeme.count}} times.</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<h2>People you may want to poke:</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Alias</th>
+					<th>Email Addresss</th>
+					<th>Poke History</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in users %}
+					<tr>
+						<td>{{user.first_name}}</td>
+						<td>{{user.last_name}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.count}} pokes</td>
+						<td><a href="{% url 'black_belt:my_poke' id=user.id %}"> <input type="button" value="Poke"></a></td>
+					</tr>
+				{% endfor %}
+			</tbody>	
+		</table>
+	</body>
+</html>
