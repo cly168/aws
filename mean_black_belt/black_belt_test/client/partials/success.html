@@ -1,0 +1,21 @@
+<h1>Welcome {{user.first_name}}!</h1>
+<div ng-bind = 'message'></div>
+<form ng-submit='addList()'>
+	<input type="text" value="title" placeholder="Title" ng-model = 'list.title'>
+	<input type="text" value="desc" placeholder="Description" ng-model = 'list.desc'>
+	<select ng-model = 'list._user2'>
+		<option ng-repeat='userItem in users' value='{{userItem._id}}' ng-if='userItem._id != user._id'>{{userItem.first_name}}</option>
+	</select>
+	<input type="submit" value="Add to List">
+</form>
+<h3>Before I die I want to...</h3>
+<div ng-repeat = 'listItem in lists'>
+	<form>		
+		<input type="checkbox" name="checked" ng-click='checkedList(listItem._id)' ng-checked = 'listItem.checked'>
+		{{listItem._user1.first_name}} | {{listItem.title}} - {{listItem.desc}} - {{listItem.createdAt}}</p>
+	</form>
+</div>
+<h4>List of other users (Click to view profile)</h4>
+<div ng-repeat = 'userItem in users' ng-if='userItem._id != user._id'>
+	<a href='#/user/{{userItem._id}}'><p>{{userItem.first_name}}</p></a>
+</div>

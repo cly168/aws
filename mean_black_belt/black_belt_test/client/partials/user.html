@@ -1,0 +1,16 @@
+
+<h1>{{user.first_name}}'s Bucket List</h1>
+<h3>Done</h3>
+<div ng-repeat = 'listItem in lists' ng-if='listItem.checked == true'>
+	<form>		
+		<input type="checkbox" name="checked" ng-click='checkedList(listItem._id)' ng-checked = 'listItem.checked' ng-disabled ='true'>
+		{{listItem._user1.first_name}} | {{listItem.title}} - {{listItem.desc}} - {{listItem.createdAt}}</p>
+	</form>
+</div>
+<h3>Pending</h3>
+<div ng-repeat = 'listItem in lists' ng-if='listItem.checked == false'>
+	<form>		
+		<input type="checkbox" name="checked" ng-click='checkedList(listItem._id)' ng-checked = 'listItem.checked' ng-disabled ='true'>
+		{{listItem._user1.first_name}} | {{listItem.title}} - {{listItem.desc}} - {{listItem.createdAt}}</p>
+	</form>
+</div>

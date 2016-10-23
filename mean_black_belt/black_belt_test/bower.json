@@ -1,0 +1,17 @@
+{
+  "name": "login_reg_assignment",
+  "homepage": "https://github.com/cly168/mean-charlie-workspace",
+  "authors": [
+    "Christina Ly <cly168@vt.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
