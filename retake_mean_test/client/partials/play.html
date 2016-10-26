@@ -1,0 +1,16 @@
+<h1>Hi {{user.name}}!</h1>
+<p>Choose an answer for each of the questions and submit the test once done.
+Good Luck</p>
+<h1 ng-bind ='quizmessage'></h1>
+<form ng-submit='grade()'>
+	<ol> <div ng-repeat = 'questionItem in questions track by $index'>
+		<li>{{questionItem.question}}</li>
+		<ul style='list-style: none'>
+			<li><input type="radio" name="answer{{$index}}" value="{{questionItem.fake1}}" ng-model='answer[$index]'>{{questionItem.fake1}}</li>
+			<li><input type="radio" name="answer{{$index}}" value="{{questionItem.fake2}}" ng-model='answer[$index]'>{{questionItem.fake2}}</li>
+			<li><input type="radio" name="answer{{$index}}" value="{{questionItem.correct}}" ng-model='answer[$index]'>{{questionItem.correct}}</li>
+		</ul></div>
+	</ol>
+	<a href="/#/index"><button>Cancel</button></a>
+	<input type="submit" name="submit">
+</form>

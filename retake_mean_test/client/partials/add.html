@@ -1,0 +1,12 @@
+<a href ='/#/index'>Home</a>
+<a href = '/#/add'>Add a Question</a>
+<h1>New Question</h1>
+<h3 ng-bind='message'></h3>
+<form ng-submit="addQuestions()">
+	<label>Question: </label><input type="text" name="question" ng-model = 'question.question'><br>
+	<label>Correct Answer: </label><input type="text" name="correct" ng-model = 'question.correct'><br>
+	<label>Fake Answer 1: </label><input type="text" name="fake1" ng-model = 'question.fake1'><br>
+	<label>Fake Answer 2: </label><input type="text" name="fake2" ng-model = 'question.fake2'><br>
+	<a href="/#/index"><button>Cancel</button></a>
+	<input type="submit" value="Add Question">
+</form>

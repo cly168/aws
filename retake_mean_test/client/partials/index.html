@@ -1,0 +1,24 @@
+<a href ='/#/index'>Home</a>
+<a href = '/#/add'>Add a Question</a>
+<a href = '#/' ng-click='logout()'>Logout</a><br>
+<a href="/#/play"><button>Play!</button></a>
+<h2>Click the button above to start the trivia game.</h2>
+<h3 ng-if='lastgrade'>That was great, {{user.name}}!  Your score is {{lastgrade}}/{{questions.length}} ({{lastgrade/questions.length*(100) | number:0}}%)</h3>
+<h1>Welcome {{user.name}}!</h1>
+<input type="text" value="Search" ng-model='search'>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Score</th>
+			<th>Percentage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat = 'userItem in users | orderBy: "score":true | filter:search'>
+			<td>{{userItem.name}}</td>
+			<td>{{userItem.score}}</td>
+			<td>{{(userItem.score/questions.length)*100 | number:0}}%</td>
+		</tr>
+	</tbody>
+</table>
